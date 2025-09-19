@@ -34,12 +34,12 @@ jobs:
     - name: SonarQube Scan
       uses: sonarqube-quality-gate-action@master
       env:
-        SONAR_TOKEN: ${{sqp_18d49d26102b60f7ed1325ed9bc46759b0ea5712}}
-        SONAR_HOST_URL: ${{http://localhost:9000}}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
       with:
         projectBaseDir: .
         args: >
-          -Dsonar.projectKey=TTRanking-main
+          -Dsonar.projectKey=Aplicativo_Semestral
           -Dsonar.projectName=TTRanking-Semestral
           -Dsonar.sources=src
           -Dsonar.tests=src
